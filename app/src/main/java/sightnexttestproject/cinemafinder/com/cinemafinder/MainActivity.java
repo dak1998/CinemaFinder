@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -17,7 +16,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -29,7 +27,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hanks.htextview.base.HTextView;
-import com.hanks.htextview.scale.ScaleTextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -69,7 +66,7 @@ public class MainActivity extends BaseActivity implements ConnectionCallbacks,
 
     LocationHelper locationHelper;
 
-    int delay = 2000; //milliseconds
+    int delay = 2000;
     Handler handler;
     ArrayList<String> arrMessages = new ArrayList<>();
     int position=0;
@@ -148,17 +145,6 @@ public class MainActivity extends BaseActivity implements ConnectionCallbacks,
             }
         });
 
-        /*cinemaNames.add("Maxus Cinemas");
-        cinemaNames.add("Cinemax");
-        cinemaNames.add("INOX");
-        cinemaNames.add("Carnival Cinemas");
-        cinemaNames.add("Fun Cinemas");
-        cinemaNames.add("Adlabs");
-        cinemaNames.add("PVR Cinemas");
-        cinemaNames.add("Movietime");
-        cinemaNames.add("Diamond CInemas");
-        cinemaNames.add("Matrix Cinemas");*/
-
         calendarIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -213,10 +199,8 @@ public class MainActivity extends BaseActivity implements ConnectionCallbacks,
             }
         });
 
-        // check availability of play services
         if (locationHelper.checkPlayServices()) {
 
-            // Building the GoogleApi client
             locationHelper.buildGoogleApiClient();
         }
 
@@ -231,12 +215,6 @@ public class MainActivity extends BaseActivity implements ConnectionCallbacks,
         if (locationAddress != null) {
 
             String address = locationAddress.getAddressLine(0);
-            //showToast(address);
-            /*String address1 = locationAddress.getAddressLine(1);
-            String city = locationAddress.getLocality();
-            String state = locationAddress.getAdminArea();
-            String country = locationAddress.getCountryName();
-            String postalCode = locationAddress.getPostalCode();*/
 
             if (!TextUtils.isEmpty(address)) {
                 currentLocation = address;
@@ -385,7 +363,7 @@ public class MainActivity extends BaseActivity implements ConnectionCallbacks,
 
     public void showToast(String message)
     {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     public int randInt(int min, int max) {
