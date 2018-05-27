@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LMLinearLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/LMCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="5dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        card_view:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <sightnexttestproject.cinemafinder.com.cinemafinder.Utils.TopAlignedImageView
+                android:id="@+id/LMimageViewRow"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="matrix" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_below="@+id/LMimageViewRow"
+                android:id="@+id/LRview"
+                android:background="@color/colorWhite"/>
+
+
+            <sightnexttestproject.cinemafinder.com.cinemafinder.Utils.MyTextViewBold
+                android:id="@+id/LMtextViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="start"
+                android:lines="1"
+                android:ellipsize="end"
+                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textColor="@color/black"
+                android:layout_alignTop="@+id/LRview"
+                android:textStyle="bold" />
+
+            <sightnexttestproject.cinemafinder.com.cinemafinder.Utils.MyTextView
+                android:id="@+id/LMtextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:lines="2"
+                android:ellipsize="end"
+                android:layout_marginTop="0.5dp"
+                android:textColor="@color/black"
+                android:layout_alignLeft="@+id/LMtextViewTitle"
+                android:layout_alignStart="@+id/LMtextViewTitle"
+
+                android:layout_below="@+id/LMtextViewTitle"
+                style="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <RatingBar
+                android:id="@+id/LMRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:rating="0"
+                android:theme="@style/RatingBar"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignRight="@+id/LRview"
+                android:layout_alignEnd="@+id/LRview"
+                android:layout_below="@+id/LMtextViewSubtitle" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

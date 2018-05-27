@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "43985139029",
+    "firebase_url": "https://cinema-finder.firebaseio.com",
+    "project_id": "cinema-finder",
+    "storage_bucket": "cinema-finder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43985139029:android:f34d4b7885f9b52a",
+        "android_client_info": {
+          "package_name": "sightnexttestproject.cinemafinder.com.cinemafinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43985139029-16fngba8mbvg5od0l04eq4itco6bhu41.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sightnexttestproject.cinemafinder.com.cinemafinder",
+            "certificate_hash": "6185108787dcbc424b597091f2f005285e88e16f"
+          }
+        },
+        {
+          "client_id": "43985139029-5eg110oai06145fhkb6sg896krom3ht7.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "43985139029-5eg110oai06145fhkb6sg896krom3ht7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ6Ca7WeK3ij9FHPxg-6YE-RhVXC5901w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43985139029-5eg110oai06145fhkb6sg896krom3ht7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

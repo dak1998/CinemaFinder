@@ -1,18 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:htext="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="sightnexttestproject.cinemafinder.com.cinemafinder.MainActivity">
 
-    <TextView
+    <include layout="@layout/custom_action_bar" />
+
+    <com.hanks.htextview.scale.ScaleTextView
+        android:id="@+id/helloTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
+        android:text=""
+        android:layout_above="@+id/date_card_view"
+        style="@android:style/TextAppearance.DeviceDefault.Large"/>
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.CardView
+        card_view:elevation="5dp"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/location_card_view"
+        android:id="@+id/date_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:gravity= "center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <sightnexttestproject.cinemafinder.com.cinemafinder.Utils.MyTextViewBold
+                android:id="@+id/dateHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start"
+                android:layout_weight="0.9"
+                style="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textColor="@color/secondary_text"
+                android:text="@string/date"/>
+
+            <ImageView
+                android:id="@+id/calendarIcon"
+                android:src="@drawable/calendar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:layout_weight="0.1"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        card_view:elevation="5dp"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/location_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    android:padding="@dimen/items_inbetween"
+                    android:gravity= "center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/location"
+                        android:layout_width="70dp"
+                        android:layout_height="150dp" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:layout_margin="15dp"
+                        android:padding="10dp"
+                        android:textColor="@color/secondary_text"
+                        style="@style/proceedButtonStyle"
+                        android:id="@+id/btnLocation"
+                        android:text="Find Me NearBy Cinemas" />
+
+                </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/loadingLL"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <sightnexttestproject.cinemafinder.com.cinemafinder.Utils.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textColor="@color/secondary_text"
+            android:text="Loading \nPlease Wait"
+            android:textAlignment="center"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+    </LinearLayout>
+</LinearLayout>

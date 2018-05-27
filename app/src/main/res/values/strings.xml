@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Cinema Finder</string>
+
+    <string name="quotedesc">Welcome! Where should we deliver to?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="show_timings">Show Timings: \n8:00 a.m\n11:00 a.m\n1:00 p.m\n5:00 p.m\n9:00 p.m</string>
+    <string name="date">Select a Date</string>
 </resources>
