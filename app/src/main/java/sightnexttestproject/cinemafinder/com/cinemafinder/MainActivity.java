@@ -299,30 +299,36 @@ public class MainActivity extends BaseActivity implements ConnectionCallbacks,
                             Collections.shuffle(moviesNames);
                             Collections.shuffle(cinemaNames);
 
-                            Log.e("one",moviesNames.toString());
-
                             int cinemaCount = randInt(4,8);
 
                             for (int i=0; i<cinemaCount; i++) {
 
-                                String nameWithLocation = (cinemaNames.get(i) + ", " + currentLocation);
+                                if ( cinemaNames.get(i) != null) {
 
-                                Log.e("one1", cinemaNames.get(i));
-                                int moviesCount = randInt(3,6);
+                                    String nameWithLocation = (cinemaNames.get(i) + ", " + currentLocation);
 
-                                ArrayList<String> selectedMovies = new ArrayList<String>();
 
-                                for (int j=0;j<moviesCount;j++)
-                                    selectedMovies.add(moviesNames.get(j));
+                                    int moviesCount = randInt(3, 6);
 
-                                locationDbRef.child(currentLocation).child(nameWithLocation).setValue(selectedMovies);
+                                    ArrayList<String> selectedMovies = new ArrayList<String>();
 
-                                Intent intent = new Intent(MainActivity.this, ViewCinemas.class);
-                                intent.putExtra("location", currentLocation);
-                                intent.putExtra("date", selectedDate);
-                                startActivity(intent);
-                                overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+                                    for (int j = 0; j < moviesCount; j++)
+                                        selectedMovies.add(moviesNames.get(j));
+
+                                    locationDbRef.child(currentLocation).child(nameWithLocation).setValue(selectedMovies);
+                                }
+
                             }
+
+                            Intent intent = new Intent(MainActivity.this, ViewCinemas.class);
+                            intent.putExtra("location", currentLocation);
+                            intent.putExtra("date", selectedDate);
+                            loadingLayout.setVisibility(View.GONE);
+                            mCardViewLocation.setVisibility(View.VISIBLE);
+                            mCardViewDate.setVisibility(View.VISIBLE);
+                            helloTextView.setVisibility(View.VISIBLE);
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
 
                         }
                     }

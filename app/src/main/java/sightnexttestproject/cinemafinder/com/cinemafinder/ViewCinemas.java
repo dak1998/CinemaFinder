@@ -1,9 +1,7 @@
 package sightnexttestproject.cinemafinder.com.cinemafinder;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -65,7 +63,7 @@ public class ViewCinemas extends BaseActivity {
                 for( DataSnapshot childSnapshot : dataSnapshot.getChildren() )
                     cinemaNames.add(childSnapshot.getKey());
 
-                Log.e("cn", cinemaNames.toString());
+
 
                 CustomAdapter1 ca1 = new CustomAdapter1(ViewCinemas.this, cinemaNames);
                 mListView.setAdapter(ca1);
@@ -79,7 +77,7 @@ public class ViewCinemas extends BaseActivity {
                         Intent intent = new Intent(ViewCinemas.this, ListMovies.class);
                         intent.putExtra("location", location);
                         intent.putExtra("cinemaName", cinemaNames.get(position));
-                        Log.e("cn1", cinemaNames.get(position));
+
                         intent.putExtra("date", selectedDate);
                         startActivity(intent);
                         overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);

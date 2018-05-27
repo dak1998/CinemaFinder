@@ -45,8 +45,6 @@ public class CustomAdapter2 extends ArrayAdapter<String> {
         LayoutInflater inflater=context.getLayoutInflater();
         View row=inflater.inflate(R.layout.list2, null, true);
 
-        Log.e("mn1",String.valueOf(position));
-
         MyTextViewBold titleTV=(MyTextViewBold) row.findViewById(R.id.LMtextViewTitle);
         MyTextView subtitleTV=(MyTextView) row.findViewById(R.id.LMtextViewSubtitle);
         TopAlignedImageView posterTIV = (TopAlignedImageView) row.findViewById(R.id.LMimageViewRow);

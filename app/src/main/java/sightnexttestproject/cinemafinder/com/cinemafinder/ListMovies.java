@@ -47,8 +47,6 @@ public class ListMovies extends BaseActivity {
         cinema = getIntent().getStringExtra("cinemaName");
         selectedDate = getIntent().getStringExtra("date");
 
-        Log.e("mn", location);
-
         setTitle("Movies at "+ cinema +" on "+selectedDate);
 
         mListView.setVisibility(View.GONE);
@@ -69,7 +67,6 @@ public class ListMovies extends BaseActivity {
 
                 names = (ArrayList<String>) dataSnapshot.getValue();
 
-                Log.e("mn", names.toString());
 
                 for (  final String movieName : names ) {
 
@@ -84,9 +81,6 @@ public class ListMovies extends BaseActivity {
 
                             mProgressBar.setVisibility(View.GONE);
                             mListView.setVisibility(View.VISIBLE);
-
-                            Log.e("mn1", desc.toString());
-
 
                             CustomAdapter2 ca2 = new CustomAdapter2(ListMovies.this, namesForAdapter , desc, poster, rating);
                             mListView.setAdapter(ca2);
